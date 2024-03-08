@@ -30,6 +30,9 @@
 (require 'org-roam)
 (require 'org-roam-protocol)
 
+(defun org-roam-capture-safari-remove-trailings (url)
+  (string-trim-left url "^.*]\\["))
+
 ;;;
 (defun org-roam-capture-safari-ref ()
   "Call `org-roam-protocol-open-ref' based the front most Safari window.

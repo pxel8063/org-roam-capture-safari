@@ -30,7 +30,7 @@
 (require 'org-roam)
 (require 'org-roam-protocol)
 
-(defun org-roam-capture-safari-remove-trailings (url)
+(defun org-roam-capture-safari-remove-leading-brackets (url)
   (string-trim-left url "^.*]\\["))
 
 ;;;

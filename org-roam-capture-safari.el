@@ -51,8 +51,8 @@ Uses `org-mac-link-safari-get-frontmost-url' to capture url from Safari."
   (let* ((url (org-mac-link-safari-get-frontmost-url)) ;; url looks like "[[ref][title]]"
 	 (orglink (substring url 1 -1))  ;; orglink should be "[ref][title]"
 	 (title  (let ((s (org-roam-capture-safari-remove-leading-brackets url)))
-		   (string-trim-right s "\\]\\]"))))
-    (when (string-match "\\[\\(.*\\)\\]\\[\\(.*\\)\\]" orglink)
+		   (string-trim-right s "]]"))))
+    (when (string-match "\\[\\(.*\\)]\\[\\(.*\\)]" orglink)
       (let ((testinfo (list ':ref (match-string 1 orglink)
 			    ':template org-roam-capture-safari-ref-template
 			    ':title title

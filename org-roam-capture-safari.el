@@ -31,6 +31,7 @@
 (require 'org-roam-protocol)
 
 (defun org-roam-capture-safari-remove-leading-brackets (url)
+  "Return the substring of URL starting at the org link description."
   (string-trim-left url "^.*]\\["))
 
 ;;;
@@ -40,7 +41,7 @@ Uses `org-mac-link-safari-get-frontmost-url' to capture url from Safari."
   (interactive)
   (let* ((url (org-mac-link-safari-get-frontmost-url)) ;; url looks like "[[ref][title]]"
 	 (orglink (substring url 1 -1))  ;; orglink should be "[ref][title]"
-	 (title  (let ((s (string-trim-left url "^.*]\\[")))
+	 (title  (let ((s (org-roam-capture-safari-remove-leading-brackets url)))
 		   (string-trim-right s "\\]\\]"))))
     (when (string-match "\\[\\(.*\\)\\]\\[\\(.*\\)\\]" orglink)
       (let ((testinfo (list ':ref (match-string 1 orglink) ':template "r" ':title title ':body "")))

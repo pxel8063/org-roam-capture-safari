@@ -2,3 +2,4 @@
 *.elc
 *~
 /Eldev-local
+/org-roam-capture-safari-autoloads.el

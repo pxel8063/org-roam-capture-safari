@@ -34,7 +34,7 @@
   "Return the substring of URL starting at the org link description."
   (string-trim-left url "^.*]\\["))
 
-;;;
+;;;###autoload
 (defun org-roam-capture-safari-ref ()
   "Call `org-roam-protocol-open-ref' based the front most Safari window.
 Uses `org-mac-link-safari-get-frontmost-url' to capture url from Safari."

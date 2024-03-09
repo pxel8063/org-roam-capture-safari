@@ -31,7 +31,8 @@
 (require 'org-roam-protocol)
 
 (defgroup org-roam-capture-safari nil
-  "org-roam-capture-safari")
+  "Custom variables of org-roam-capture-safari."
+  :group 'org-roam)
 
 (defcustom org-roam-capture-safari-ref-template "r"
   "String to specity org-roam-capture-ref-templates."

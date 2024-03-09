@@ -44,13 +44,14 @@
   (string-trim-left url "^.*]\\["))
 
 (defun org-roam-capture-safari-extract-title (link)
-  "Return the title of url as the description of org link."
+  "Return the title of LINK as the description of org link."
   (string-trim-right (org-roam-capture-safari-remove-leading-brackets link) "]]"))
 
 ;;;###autoload
 (defun org-roam-capture-safari-ref ()
-  "Call `org-roam-protocol-open-ref' based the front most Safari window.
-Uses `org-mac-link-safari-get-frontmost-url' to capture url from Safari."
+  "Initiate org-roam-capture process based on the front most Safari window.
+This process uses org-roam-capture-ref-templates.
+See `org-roam-capture-safari-ref-template' for customization."
   (interactive)
   (let* ((url (org-mac-link-safari-get-frontmost-url)) ;; url looks like "[[ref][title]]"
 	 (orglink (substring url 1 -1))  ;; orglink should be "[ref][title]"

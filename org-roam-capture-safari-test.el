@@ -1,3 +1,4 @@
+;;; org-roam-capture-safari-test.el --- test functions -*- lexical-binding: t -*-
 (require 'org-roam-capture-safari)
 
 (ert-deftest remove-leading-brackets-test ()

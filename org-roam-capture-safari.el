@@ -35,7 +35,7 @@
   :group 'org-roam)
 
 (defcustom org-roam-capture-safari-ref-template "r"
-  "String to specity org-roam-capture-ref-templates."
+  "String to specity `org-roam-capture-ref-templates'."
   :group 'org-roam-capture-safari
   :type 'string)
 
@@ -49,8 +49,8 @@
 
 ;;;###autoload
 (defun org-roam-capture-safari-ref ()
-  "Initiate org-roam-capture process based on the front most Safari window.
-This process uses org-roam-capture-ref-templates.
+  "Initiate `org-roam-capture-open-ref' process based on the Safari window.
+This process uses `org-roam-capture-ref-templates'.
 See `org-roam-capture-safari-ref-template' for customization."
   (interactive)
   (let* ((url (org-mac-link-safari-get-frontmost-url)) ;; url looks like "[[ref][title]]"

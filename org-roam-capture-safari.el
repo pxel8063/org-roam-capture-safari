@@ -23,7 +23,13 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; invoke this by /usr/local/bin/emacsclient --eval "(org-roam-capture-safari-ref)"
+;;  M-x org-roam-capture-safari-ref initiates org-roam-capture-open-ref process
+;;  based on the Safari window.
+;;
+;;  The url and title will be set in org-roam-capture-ref-template.
+;;  Ref template can be specified by the org-roam-capture-safari-ref-template
+;;  variable, which can be set through the customize variable interface of
+;;  Emacs.
 
 ;;; Code:
 (require 'org-mac-link)

@@ -55,14 +55,10 @@
 
 (defun org-roam-capture-safari-construct-info (ref title)
   "Construct info plist from REF and TITLE."
-  (plist-put
-   (plist-put
-    (plist-put
-     (plist-put nil
-		':ref ref)
-     ':title title)
-    ':template org-roam-capture-safari-ref-template)
-   ':body ""))
+  (list ':ref ref
+	':title title
+	':template org-roam-capture-safari-ref-template
+	':body ""))
 
 ;;;###autoload
 (defun org-roam-capture-safari-ref ()

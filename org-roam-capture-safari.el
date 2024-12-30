@@ -3,9 +3,9 @@
 ;; Copyright (C) 2024  pxel8063
 
 ;; Author: pxel8063 <pxel8063@gmail.com>
-;; Version:    0.0.1
+;; Version:    0.0.2
 ;; Keywords:   lisp
-;; Package-Requires: ((emacs "27.1")(org-mac-link "1.9")(org-roam "2.2.2"))
+;; Package-Requires: ((emacs "29.1")(org-mac-link "1.9")(org-roam "2.2.2")(magit "20241223.2133"))
 
 ;; URL: https://github.com/pxel8063/org-roam-capture-safari
 
@@ -75,6 +75,19 @@ See `org-roam-capture-safari-ref-template' for customization."
 		   title)))
 	(org-roam-protocol-open-ref info)
 	(ignore-errors)))))
+
+;;;###autoload
+(defun org-roam-capture-safari-orglink ()
+  "Initiate `org-roam-capture-open-ref' process at the point.
+The line at the point must have org link format.
+This process uses `org-roam-capture-ref-templates'.
+See `org-roam-capture-safari-ref-template' for customization."
+  (interactive)
+  (when (org-in-regexp org-link-bracket-re 1)
+    (let* ((url (match-string 1))
+	   (des (match-string 2))
+	   (info (org-roam-capture-safari-construct-info url des)))
+	(org-roam-protocol-open-ref info))))
 
 (provide 'org-roam-capture-safari)
 ;;; org-roam-capture-safari.el ends here

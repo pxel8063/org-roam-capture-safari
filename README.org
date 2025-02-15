@@ -11,7 +11,7 @@ Safari.
 
 * Installation
 Since there is no central package repository at this moment, you can use
-=el-get=, or similar package system.
+=el-get=, or similar package manager.
 
 #+begin_src emacs-lisp
   (leaf org-roam-capture-safari
@@ -27,4 +27,4 @@ Then, you go to emacs window to focus. From there, =M-x org-roam-capture-safari-
 * Customization
 There is one variable that can be customized: =org-roam-capture-safari-ref-template=
 
-Please refer the docstring of this variable.
+Please refer to the docstring of this variable.

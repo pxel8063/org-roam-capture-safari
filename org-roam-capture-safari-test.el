@@ -34,8 +34,8 @@
   (let* ((ref "http://localhost/")
 	 (title "title A")
 	 (target (org-roam-capture-safari-construct-info ref title)))
-    (should (string= (plist-get target ':ref) "http://localhost/"))
-    (should (string= (plist-get target ':title) "title A"))))
+    (should (string= (plist-get target :ref) "http://localhost/"))
+    (should (string= (plist-get target :title) "title A"))))
 
 (provide 'org-roam-capture-safari-test)
 ;;; org-roam-capture-safari-test.el ends here.

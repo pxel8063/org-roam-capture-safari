@@ -5,7 +5,7 @@
 ;; Author: pxel8063 <pxel8063@gmail.com>
 ;; Version:    0.0.2
 ;; Keywords:   lisp
-;; Package-Requires: ((emacs "29.1")(org-mac-link "1.9")(org-roam "2.2.2"))
+;; Package-Requires: ((emacs "29.1")(org-mac-link "1.9")(org-roam "20250111.252"))
 
 ;; URL: https://github.com/pxel8063/org-roam-capture-safari
 

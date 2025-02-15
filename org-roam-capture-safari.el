@@ -45,14 +45,6 @@
   :group 'org-roam-capture-safari
   :type 'string)
 
-(defun org-roam-capture-safari-remove-leading-brackets (url)
-  "Return the substring of URL starting at the org link description."
-  (string-trim-left url "^.*]\\["))
-
-(defun org-roam-capture-safari-extract-title (link)
-  "Return the title of LINK as the description of org link."
-  (string-trim-right (org-roam-capture-safari-remove-leading-brackets link) "]]"))
-
 (defun org-roam-capture-safari-construct-info (url)
   "Construct info plist from URL."
   (string-match org-link-bracket-re url)

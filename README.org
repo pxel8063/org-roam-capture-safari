@@ -1,6 +1,6 @@
-#+title: Org-Roam-Capture-Safari: An alternative to the roam-node protocol with Safari
+#+title: Org-Roam-Capture-Safari: An alternative to the roam-ref protocol with Safari
 #+author: pxel8063
-[[https://github.com/pxel8063/org-roam-capture-safari/actions][https://github.com/pxel8063/org-roam-capture-safari/actions/workflows/test.yml/badge.svg]][[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
+[[https://github.com/pxel8063/org-roam-capture-safari/actions][https://github.com/pxel8063/org-roam-capture-safari/actions/workflows/test.yml/badge.svg]] [[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
 
 =org-roam-capture-safari= can be used to create a new note with a given
 =ROAM_REFS=.
@@ -18,13 +18,25 @@ Since there is no central package repository at this moment, you can use
     :el-get pxel8063/org-roam-capture-safari)
 #+end_src
 
+Second, setup =org-roam-capture-ref-templates=.
+#+begin_src emacs-lisp
+  (setq org-roam-capture-ref-templates
+        '(("r" "ref" plain "${body}\n%?" :target
+  	 (file+head "references/${slug}.org" "#+title: ${title}\n")
+  	 :unnarrowed t)))
+#+end_src
+Notice the template key for a template, in this example ="r"= , must agree with
+=org-roam-capture-safari-ref-template=. See [[#customization-options][Customization Options]].
+
+You don't need to create a [[https://en.wikipedia.org/wiki/Bookmarklet][bookmarklet]] in your browser.
+
 * Usage
 Before you create a note, you open the safari window with your content in
 frontmost window or tab.
 
 Then, you go to emacs window to focus. From there, =M-x org-roam-capture-safari-ref=.
 
-* Customization
+* Customization Options
 There is one variable that can be customized: =org-roam-capture-safari-ref-template=
 
 Please refer to the docstring of this variable.

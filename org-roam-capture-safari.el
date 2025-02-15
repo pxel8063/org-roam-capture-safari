@@ -1,6 +1,6 @@
 ;;; org-roam-capture-safari.el --- Org capture helper functions -*- lexical-binding: t -*-
 
-;; Copyright (C) 2024  pxel8063
+;; Copyright (C) 2025  pxel8063
 
 ;; Author: pxel8063 <pxel8063@gmail.com>
 ;; Version:    0.0.2

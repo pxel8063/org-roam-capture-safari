@@ -1,6 +1,6 @@
 ;;; org-roam-capture-safari-test.el --- test functions -*- lexical-binding: t -*-
 
-;; Copyright (C) 2024  pxel8063
+;; Copyright (C) 2025  pxel8063
 
 ;; Author: pxel8063 <pxel8063@gmail.com>
 

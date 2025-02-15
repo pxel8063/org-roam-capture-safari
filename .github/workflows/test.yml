@@ -34,7 +34,7 @@ jobs:
 
     - name: Test the project
       run: |
-        eldev test
+        eldev -p -dtT -C test
         eldev -dtT -C compile --warnings-as-errors
 
     - name: Ensure that copyright notices are up-to-date

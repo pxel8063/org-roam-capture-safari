@@ -30,12 +30,9 @@
   (let ((url "[[foo][bar]]"))
     (should (string= (org-roam-capture-safari-extract-title url) "bar"))))
 
-(ert-deftest construct-info-plist ()
-  (let* ((ref "http://localhost/")
-	 (title "title A")
-	 (target (org-roam-capture-safari-construct-info ref title)))
-    (should (string= (plist-get target :ref) "http://localhost/"))
-    (should (string= (plist-get target :title) "title A"))))
+(ert-deftest url-into-info-plist-test ()
+  (should (equal (org-roam-capture-safari-construct-info "[[ref][title]]")
+		 '(:ref "ref" :title "title" :template "r" :body ""))))
 
 (provide 'org-roam-capture-safari-test)
 ;;; org-roam-capture-safari-test.el ends here.

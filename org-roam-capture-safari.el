@@ -53,12 +53,15 @@
   "Return the title of LINK as the description of org link."
   (string-trim-right (org-roam-capture-safari-remove-leading-brackets link) "]]"))
 
-(defun org-roam-capture-safari-construct-info (ref title)
-  "Construct info plist from REF and TITLE."
-  (list :ref ref
-	:title title
-	:template org-roam-capture-safari-ref-template
-	:body ""))
+(defun org-roam-capture-safari-construct-info (url)
+  "Construct info plist from URL."
+  (string-match org-link-bracket-re url)
+  (let ((ref (match-string 1 url))
+	(title (match-string 2 url)))
+    (list :ref ref
+	  :title title
+	  :template org-roam-capture-safari-ref-template
+	  :body "")))
 
 ;;;###autoload
 (defun org-roam-capture-safari-ref ()
@@ -67,14 +70,9 @@ This process uses `org-roam-capture-ref-templates'.
 See `org-roam-capture-safari-ref-template' for customization."
   (interactive)
   (let* ((url (org-mac-link-safari-get-frontmost-url)) ;; url looks like "[[ref][title]]"
-	 (orglink (substring url 1 -1))  ;; orglink should be "[ref][title]"
-	 (title (org-roam-capture-safari-extract-title url)))
-    (when (string-match "\\[\\(.*\\)]\\[\\(.*\\)]" orglink)
-      (let ((info (org-roam-capture-safari-construct-info
-		   (match-string 1 orglink)
-		   title)))
-	(org-roam-protocol-open-ref info)
-	(ignore-errors)))))
+	 (info (org-roam-capture-safari-construct-info url)))
+    (org-roam-protocol-open-ref info)
+    (ignore-errors)))
 
 ;;;###autoload
 (defun org-roam-capture-safari-orglink ()
@@ -84,9 +82,8 @@ This process uses `org-roam-capture-ref-templates'.
 See `org-roam-capture-safari-ref-template' for customization."
   (interactive)
   (when (org-in-regexp org-link-bracket-re 1)
-    (let* ((url (match-string 1))
-	   (des (match-string 2))
-	   (info (org-roam-capture-safari-construct-info url des)))
+    (let* ((url (match-string 0))
+	   (info (org-roam-capture-safari-construct-info url)))
 	(org-roam-protocol-open-ref info))))
 
 (provide 'org-roam-capture-safari)

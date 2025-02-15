@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    paths-ignore: ['**.md', '**.adoc']
+    paths-ignore: ['**.org', '**.md', '**.adoc']
   pull_request:
-    paths-ignore: ['**.md', '**.adoc']
+    paths-ignore: ['**.org', '**.md', '**.adoc']
 
 jobs:
   test:

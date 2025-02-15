@@ -1,0 +1,30 @@
+#+title: Org-Roam-Capture-Safari: An alternative to the roam-node protocol with Safari
+#+author: pxel8063
+[[https://github.com/pxel8063/org-roam-capture-safari/actions][https://github.com/pxel8063/org-roam-capture-safari/actions/workflows/test.yml/badge.svg]][[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
+
+=org-roam-capture-safari= can be used to create a new note with a given
+=ROAM_REFS=.
+
+There are several implementation example with mordern browsers, such as
+Firefox. This package should provide the workflow to create note from Mac OS
+Safari.
+
+* Installation
+Since there is no central package repository at this moment, you can use
+=el-get=, or similar package system.
+
+#+begin_src emacs-lisp
+  (leaf org-roam-capture-safari
+    :el-get pxel8063/org-roam-capture-safari)
+#+end_src
+
+* Usage
+Before you create a note, you open the safari window with your content in
+frontmost window or tab.
+
+Then, you go to emacs window to focus. From there, =M-x org-roam-capture-safari-ref=.
+
+* Customization
+There is one variable that can be customized: =org-roam-capture-safari-ref-template=
+
+Please refer the docstring of this variable.

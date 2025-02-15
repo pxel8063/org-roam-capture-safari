@@ -5,7 +5,7 @@
 =org-roam-capture-safari= can be used to create a new note with a given
 =ROAM_REFS=.
 
-There are several implementation example with mordern browsers, such as
+There are several implementation examples with mordern browsers, such as
 Firefox. This package should provide the workflow to create note from Mac OS
 Safari.
 
@@ -31,7 +31,7 @@ Notice the template key for a template, in this example ="r"= , must agree with
 You don't need to create a [[https://en.wikipedia.org/wiki/Bookmarklet][bookmarklet]] in your browser.
 
 * Usage
-Before you create a note, you open the safari window with your content in
+Before you create a note, you must open the Safari window with your content in
 frontmost window or tab.
 
 Then, you go to emacs window to focus. From there, =M-x org-roam-capture-safari-ref=.

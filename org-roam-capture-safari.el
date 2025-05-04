@@ -78,5 +78,18 @@ See `org-roam-capture-safari-ref-template' for customization."
 	   (info (org-roam-capture-safari-construct-info url)))
 	(org-roam-protocol-open-ref info))))
 
+(defun org-roam-capture-safari-orglink-headline ()
+  "Insert a link in Org Synatx into headline."
+  (interactive)
+  (let ((end-of-bracket (cdr (org-in-regexp org-link-bracket-re 1))))
+    (when end-of-bracket
+      (let* ((url (match-string 0))
+	     (info (org-roam-capture-safari-construct-info url)))
+	(goto-char end-of-bracket)
+	(org-insert-heading)
+	(insert (plist-get info :title))
+	(newline)
+	(insert (plist-get info :ref))))))
+
 (provide 'org-roam-capture-safari)
 ;;; org-roam-capture-safari.el ends here
